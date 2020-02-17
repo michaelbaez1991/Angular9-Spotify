@@ -35,7 +35,7 @@ export class ReleasesComponent implements OnInit {
         this.newReleases = data;
         this.isLoading = false;
       });
-    }, 500);
+    }, 1500);
 
   }
 

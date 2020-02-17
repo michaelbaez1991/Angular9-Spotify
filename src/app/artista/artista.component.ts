@@ -35,7 +35,7 @@ export class ArtistaComponent implements OnInit {
         this.getArtist(params.id);
         this.getTopTracks(params.id);
       });
-    }, 500);
+    }, 1500);
   }
 
   private getArtist(id: string) {
