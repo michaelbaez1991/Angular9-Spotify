@@ -11,6 +11,12 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { DomSeguroPipe } from './pipes/domseguro.pipe';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { ArtistaComponent } from './artista/artista.component';
+import { BackendJavaComponent } from './backend-java/backend-java.component';
+import { ReadComponent } from './Crud/read/read.component';
+import { AddComponent } from './Crud/add/add.component';
+import { UpdateComponent } from './Crud/update/update.component';
+import { FormsModule } from '@angular/forms';
+import { CrudJavaService } from '../app/services/crud-java.service';
 
 export const ROUTES: Routes = [
   { path: 'lanzamientos', component: ReleasesComponent, children: [
@@ -21,7 +27,15 @@ export const ROUTES: Routes = [
   ]},
   { path: '', pathMatch: 'full', redirectTo: 'lanzamientos' },
   // { path: '**', pathMatch: 'full', redirectTo: 'lanzamientos' },
-  { path: 'artist/:id', component: ArtistaComponent }
+  { path: 'artist/:id', component: ArtistaComponent },
+  { path: 'BackendJava', component: BackendJavaComponent, children: [
+      { path: 'listar', component: ReadComponent },
+      { path: 'agregar', component: AddComponent }
+    ]
+  },
+  // { path: 'BackendJava/listar', component: ReadComponent },
+  // { path: 'agregar', component: AddComponent },
+  { path: 'editar', component: UpdateComponent },
 ];
 
 @NgModule({
@@ -33,14 +47,19 @@ export const ROUTES: Routes = [
     NoimagePipe,
     DomSeguroPipe,
     NavbarComponent,
-    ArtistaComponent
+    ArtistaComponent,
+    BackendJavaComponent,
+    ReadComponent,
+    AddComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
-  providers: [],
+  providers: [CrudJavaService],
   bootstrap: [AppComponent]
 })
 
