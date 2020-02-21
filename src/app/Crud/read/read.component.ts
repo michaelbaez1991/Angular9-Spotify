@@ -16,9 +16,14 @@ export class ReadComponent implements OnInit {
     this.serviceCrud.getUsers()
     .subscribe(
       data => {
-        console.log(data);
+        // console.log(data);
         this.users = data;
       }
     );
+  }
+
+  editar(user: Users): void {
+    localStorage.setItem('id', user.id.toString());
+    this.router.navigate(['BackendJava/editar']);
   }
 }

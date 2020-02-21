@@ -13,4 +13,16 @@ export class CrudJavaService {
   getUsers() {
     return this.http.get<Users[]>(this.url);
   }
+
+  postUsers(user: Users) {
+    return this.http.post<Users[]>(this.url, user);
+  }
+
+  getUsersId(id: number) {
+    return this.http.get<Users>(this.url + '/' + id);
+  }
+
+  updateUsers(user: Users) {
+    return this.http.put<Users>(this.url + '/' + user.id, user);
+  }
 }

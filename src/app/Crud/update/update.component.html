@@ -1,1 +1,31 @@
-<p>update works!</p>
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3 style="color:black;">Modificar Usuarios</h3>
+        </div>
+        <div class="card-body" >
+            <form action="">
+                <div class="form-group">
+                    <label for="" style="color:black;">Nombre: </label>
+                    <input [(ngModel)]="user.nombre" name="nombre" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="" style="color:black;">Apellido: </label>
+                    <input [(ngModel)]="user.apellido" name="apellido" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="" style="color:black;">Email: </label>
+                    <input [(ngModel)]="user.email" name="email" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="" style="color:black;">Profesión: </label>
+                    <input [(ngModel)]="user.profesion" name="profesion" type="text" class="form-control">
+                </div>
+                <button (click)="actualizar(user)" class="btn btn-danger">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -30,12 +30,13 @@ export const ROUTES: Routes = [
   { path: 'artist/:id', component: ArtistaComponent },
   { path: 'BackendJava', component: BackendJavaComponent, children: [
       { path: 'listar', component: ReadComponent },
-      { path: 'agregar', component: AddComponent }
+      { path: 'agregar', component: AddComponent },
+      { path: 'editar', component: UpdateComponent },
     ]
   },
-  // { path: 'BackendJava/listar', component: ReadComponent },
-  // { path: 'agregar', component: AddComponent },
-  { path: 'editar', component: UpdateComponent },
+  { path: 'BackendJava/listar', component: ReadComponent },
+  { path: 'BackendJava/agregar', component: AddComponent },
+  { path: 'BackendJava/editar', component: UpdateComponent },
 ];
 
 @NgModule({
