@@ -17,6 +17,7 @@ import { AddComponent } from './Crud/add/add.component';
 import { UpdateComponent } from './Crud/update/update.component';
 import { FormsModule } from '@angular/forms';
 import { CrudJavaService } from '../app/services/crud-java.service';
+import { SearchComponent } from './search/search.component';
 
 export const ROUTES: Routes = [
   { path: 'lanzamientos', component: ReleasesComponent, children: [
@@ -32,6 +33,7 @@ export const ROUTES: Routes = [
       { path: 'listar', component: ReadComponent },
       { path: 'agregar', component: AddComponent },
       { path: 'editar', component: UpdateComponent },
+      { path: 'buscar', component: SearchComponent },
     ]
   },
   { path: 'BackendJava/listar', component: ReadComponent },
@@ -52,7 +54,8 @@ export const ROUTES: Routes = [
     BackendJavaComponent,
     ReadComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
