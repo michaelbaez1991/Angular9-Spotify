@@ -26,4 +26,14 @@ export class ReadComponent implements OnInit {
     localStorage.setItem('id', user.id.toString());
     this.router.navigate(['BackendJava/editar']);
   }
+
+  eliminar(user: Users) {
+    this.serviceCrud.deleteUsers(user)
+    .subscribe(
+      data => {
+        // console.log(data);
+        this.users = this.users.filter(p => p !== user);
+        alert('Usuario eliminado');
+    });
+  }
 }

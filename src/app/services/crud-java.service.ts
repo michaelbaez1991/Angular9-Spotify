@@ -25,4 +25,8 @@ export class CrudJavaService {
   updateUsers(user: Users) {
     return this.http.put<Users>(this.url + '/' + user.id, user);
   }
+
+  deleteUsers(user: Users){
+    return this.http.delete<Users>(this.url  + '/' + user.id);
+  }
 }
