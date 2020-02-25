@@ -27,7 +27,6 @@ export const ROUTES: Routes = [
     }
   ]},
   { path: '', pathMatch: 'full', redirectTo: 'lanzamientos' },
-  // { path: '**', pathMatch: 'full', redirectTo: 'lanzamientos' },
   { path: 'artist/:id', component: ArtistaComponent },
   { path: 'BackendJava', component: BackendJavaComponent, children: [
       { path: 'listar', component: ReadComponent },

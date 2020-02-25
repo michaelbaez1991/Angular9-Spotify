@@ -27,7 +27,9 @@ export class ReleasesComponent implements OnInit {
         this.token.typeToken = data.token_type;
       }
     );
+  }
 
+  ngOnInit(): void {
     setTimeout(() => {
       this.spotifyService.getNewReleases(this.token.typeToken, this.token.accessToken)
       .subscribe((data: any) => {
@@ -35,10 +37,6 @@ export class ReleasesComponent implements OnInit {
         this.newReleases = data;
         this.isLoading = false;
       });
-    }, 1500);
-
-  }
-
-  ngOnInit(): void {
+    }, 1000);
   }
 }
